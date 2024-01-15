@@ -9,8 +9,9 @@
 
 #define MESSAGESIZE 4096
 
-void *client_init(struct target *target_host)
+void *client_init(void *target_host)
 {
+	// target_host should be of type struct target
 
 	int connector;
 	char message[MESSAGESIZE] = "Hello, me.";
@@ -21,7 +22,7 @@ void *client_init(struct target *target_host)
 	// to the same port the listener is on
 	// client socket is binding and sending a message to the listener,
 	// which is on the same exact port as the client socket
-	connector = get_client_socket(target_host->hostname, target_host->port);
+	connector = get_client_socket(((struct target *)target_host)->hostname, ((struct target *)target_host)->port);
 	send(connector, message, sizeof message, 0);
 	puts("Message sent.");
 

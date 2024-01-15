@@ -21,7 +21,7 @@ void *server_init()
 
 	if (listen(listener, BACKLOG) == -1) {
 		perror("listener");
-		return -1;
+		return (void *) -1;
 	}
 
 	client = accept(listener, NULL, NULL);

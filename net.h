@@ -1,6 +1,8 @@
 #ifndef NET_H
 #define NET_H
 
+struct addrinfo; // this gets rid of a bunch of warnings
+
 // this program will be in using tcp/ip
 int create_socket(struct addrinfo *p, int *sockfd, struct addrinfo **selected);
 int get_socket(int *sockf, struct addrinfo *res, struct addrinfo **selected);
