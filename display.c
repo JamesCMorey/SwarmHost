@@ -1,6 +1,22 @@
 #include <stdio.h>
+#include <ncurses.h>
+#include <stdlib.h>
 #include "display.h"
 
+
+void init_display()
+{
+	initscr();
+	addstr("This is a test");
+	refresh();
+
+	addstr("\n Press any key to exit");
+	refresh();
+
+	getch();
+
+	endwin();
+}
 
 void menu()
 {

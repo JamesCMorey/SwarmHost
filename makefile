@@ -1,4 +1,7 @@
+files := main.c server.c client.c net.c thread.c display.c
+
 main:clean
-	gcc main.c server.c client.c net.c thread.c display.c -o main
+	gcc -o main -lncurses $(files)
+
 clean:
-	rm -f client server main
+	rm -f main

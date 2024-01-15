@@ -15,13 +15,14 @@ int main()
 	homeserver->hostname = "192.168.50.22";
 	homeserver->port = "10000";
 
-	pthread_create(&server_t, NULL, server_init, NULL);
-	pthread_create(&client_t, NULL, client_init, homeserver);
+	// pthread_create(&server_t, NULL, server_init, NULL);
+	// pthread_create(&client_t, NULL, client_init, homeserver);
 
 	// do not use &pthread_t for pthread_join
-	pthread_join(client_t, NULL);
-	pthread_join(server_t, NULL);
-	menu();
+	// pthread_join(client_t, NULL);
+	// pthread_join(server_t, NULL);
+
+	init_display();
 
 	return 0;
 }
