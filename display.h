@@ -2,6 +2,7 @@
 #define DISPLAY_H
 
 void menu();
-void init_display();
+void init_TUI();
+void init_GUI();
 
 #endif
