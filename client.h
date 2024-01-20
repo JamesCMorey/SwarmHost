@@ -2,11 +2,11 @@
 #define CLIENT_H
 
 struct target {
-	char *hostname;
-	char *port;
+	char hostname[4096];
+	char port[5];
 };
 
-void *client_init(void *target_host);
+void *init_client(void *target_host);
 
 
 #endif

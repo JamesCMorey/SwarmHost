@@ -9,7 +9,7 @@
 
 #define MESSAGESIZE 4096
 
-void *client_init(void *target_host)
+void *init_client(void *target_host)
 {
 	// target_host should be of type struct target
 

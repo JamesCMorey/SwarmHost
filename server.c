@@ -12,7 +12,7 @@
 #define PORT "10000"
 #define BUFFERSIZE 4096
 
-void *server_init()
+void *init_server()
 {
 	int listener, client;
 	char buffer[4096];

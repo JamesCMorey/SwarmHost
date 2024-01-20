@@ -4,7 +4,7 @@
 #include "thread.h"
 #include "server.h"
 #include "client.h"
-#include "display.h"
+#include "control.h"
 
 
 int main()
@@ -12,8 +12,8 @@ int main()
 	pthread_t server_t, client_t;
 	struct target *homeserver = malloc(sizeof(struct target));
 	// ip of dev homeserver
-	homeserver->hostname = "192.168.50.22";
-	homeserver->port = "10000";
+	//homeserver->hostname = "192.168.50.22";
+	//homeserver->port = "10000";
 
 	//pthread_create(&server_t, NULL, server_init, NULL);
 	//pthread_create(&client_t, NULL, client_init, homeserver);
@@ -22,8 +22,10 @@ int main()
 	//pthread_join(client_t, NULL);
 	//pthread_join(server_t, NULL);
 
-	init_TUI();
+
+	//init_TUI();
 	//init_GUI();
+	init_menu();
 
 	return 0;
 }
