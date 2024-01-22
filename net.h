@@ -1,6 +1,9 @@
 #ifndef NET_H
 #define NET_H
 
+#define BUFFERSIZE 4096
+#define PORT "10000"
+
 struct addrinfo; // this gets rid of a bunch of warnings
 
 // this program will be in using tcp/ip

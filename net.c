@@ -40,7 +40,7 @@ int create_socket(struct addrinfo *p, int *sockfd, struct addrinfo **selected)
 
 int get_socket(int *sockfd, struct addrinfo *res, struct addrinfo **selected)
 {
-	int rv;
+	int rv = -1;
 
 	for (; res != NULL; res = res->ai_next) {
 		if ((rv = create_socket(res, sockfd, selected)) < 0)
@@ -54,7 +54,7 @@ int get_socket(int *sockfd, struct addrinfo *res, struct addrinfo **selected)
 
 int get_server_socket (char *port)
 {
-	struct addrinfo hints, *res, *p, *selected;
+	struct addrinfo hints, *res, *selected;
 	int sockfd, rv = 0;
 
 	memset(&hints, 0, sizeof hints);

@@ -7,14 +7,12 @@
 #include "thread.h"
 #include "client.h"
 
-#define MESSAGESIZE 4096
-
 void *init_client(void *target_host)
 {
 	// target_host should be of type struct target
 
 	int connector;
-	char message[MESSAGESIZE] = "Hello, me.";
+	char message[BUFFERSIZE] = "Hello, me.";
 
 	// TODO: fix clientsocket "bind: Address already in use"
 	// probably because the socket is being bound to the same

@@ -1,9 +1,8 @@
-files := main.c server.c client.c net.c thread.c control.c
+files := *.c
 
-includes := -lncurses -I/opt/homebrew/include -L/opt/homebrew/lib -lSDL2
+includes := -lSDL2 -lncurses
 
 main:clean
-	clang -o a.out $(includes) $(files)
-
+		clang -Weverything -o a.out $(includes) $(files)
 clean:
-	rm -f a.out
+		rm -f a.out

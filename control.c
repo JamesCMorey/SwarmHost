@@ -7,14 +7,14 @@
 #include "server.h"
 #include "net.h"
 
-void init_TUI()
+void init_TUI(void)
 {
 	initscr();
 	getch();
 	endwin();
 }
 
-void init_GUI()
+void init_GUI(void)
 {
 	if (SDL_Init(SDL_INIT_VIDEO) != 0)
 	{
@@ -27,13 +27,13 @@ void init_GUI()
 	SDL_Quit();
 }
 
-void init_menu()
+void init_menu(void)
 {
 	char input;
 
 	while (1) {
 		puts("What would you like to do?\nq)uit c)onnect s)end r)eceive");
-		input = getchar();
+		input = (char) getchar();
 
 		// deal with and display input
 		if (input == '\n')
@@ -63,7 +63,7 @@ void init_menu()
 	}
 }
 
-void get_target()
+void get_target(void)
 {
 	struct target *info = malloc(sizeof(struct target));
 	//info->hostname = malloc(sizeof(char) * 4096);
@@ -72,7 +72,7 @@ void get_target()
 	printf("Enter the target's ip: ");
 	fgets(info->hostname, 4096, stdin);
 	// remove newline
-	(info->hostname)[strcspn(info->hostname, "\n")] = 0;
+	info->hostname[strcspn(info->hostname, "\n")] = 0;
 
 	printf("Enter the target's port: ");
 	fgets(info->port, 6, stdin);

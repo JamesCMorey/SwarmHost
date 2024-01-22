@@ -9,13 +9,11 @@
 #include "thread.h"
 
 #define BACKLOG 10
-#define PORT "10000"
-#define BUFFERSIZE 4096
 
-void *init_server()
+void *init_server(void)
 {
 	int listener, client;
-	char buffer[4096];
+	char buffer[BUFFERSIZE];
 
 	listener = get_server_socket(PORT);
 

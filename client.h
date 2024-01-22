@@ -3,7 +3,7 @@
 
 struct target {
 	char hostname[4096];
-	char port[5];
+	char port[6];
 };
 
 void *init_client(void *target_host);

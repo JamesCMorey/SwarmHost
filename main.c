@@ -1,16 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
+#include <string.h>
 #include "thread.h"
 #include "server.h"
 #include "client.h"
 #include "control.h"
+#include "file.h"
+#include "hash.h"
 
-
-int main()
+int main(int argc, char **argv)
 {
-	pthread_t server_t, client_t;
-	struct target *homeserver = malloc(sizeof(struct target));
+	//pthread_t server_t, client_t;
+	//struct target *homeserver = malloc(sizeof(struct target));
 	// ip of dev homeserver
 	//homeserver->hostname = "192.168.50.22";
 	//homeserver->port = "10000";
@@ -25,7 +27,7 @@ int main()
 
 	//init_TUI();
 	//init_GUI();
-	init_menu();
+	//init_menu();
 
 	return 0;
 }
