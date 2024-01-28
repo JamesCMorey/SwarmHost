@@ -1,6 +1,6 @@
-files := src/*.c
+files := *.c
 
-includes := -Iinclude -lSDL2 -lncurses
+includes := -I../include -lSDL2 -lncurses
 
 main:clean
 		clang -Weverything -o a.out $(includes) $(files)
